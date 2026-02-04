@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Amazon Keyword Research Master Guide</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6b00 0%, #ff9500 100%);
+            padding: 60px 40px;
+            border-radius: 25px;
+            text-align: center;
+            margin-bottom: 40px;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 60%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1) rotate(0deg); opacity: 0.3; }
+            50% { transform: scale(1.5) rotate(180deg); opacity: 0.6; }
+        }
+
+        h1 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 4em;
+            color: white;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+            position: relative;
+            z-index: 1;
+            letter-spacing: 3px;
+        }
+
+        .part-section {
+            margin-bottom: 40px;
+        }
+
+        .part-header {
+            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+            padding: 25px 35px;
+            border-radius: 15px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .part-header h2 {
+            font-family: 'Bebas Neue', cursive;
+            color: white;
+            font-size: 2.5em;
+            letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            border-left: 6px solid;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.35);
+        }
+
+        .card.blue { border-left-color: #3b82f6; }
+        .card.red { border-left-color: #ef4444; }
+        .card.green { border-left-color: #10b981; }
+        .card.yellow { border-left-color: #f59e0b; }
+        .card.purple { border-left-color: #8b5cf6; }
+        .card.pink { border-left-color: #ec4899; }
+        .card.teal { border-left-color: #14b8a6; }
+        .card.orange { border-left-color: #f97316; }
+
+        .card h3 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #1f2937;
+            letter-spacing: 1px;
+        }
+
+        .card h4 {
+            font-weight: 700;
+            color: #374151;
+            margin: 20px 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        .card p {
+            line-height: 1.7;
+            color: #4b5563;
+            margin-bottom: 12px;
+        }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            line-height: 1.6;
+            color: #4b5563;
+        }
+
+        .card li:before {
+            content: "►";
+            position: absolute;
+            left: 0;
+            color: #f59e0b;
+            font-weight: bold;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 15px 0;
+            border-left: 5px solid #f59e0b;
+        }
+
+        .highlight-box strong {
+            color: #92400e;
+            font-size: 1.1em;
+        }
+
+        .example-box {
+            background: #f3f4f6;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 12px 0;
+            border-left: 4px solid #6366f1;
+            font-family: monospace;
+            font-size: 0.95em;
+        }
+
+        .tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .tag {
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9em;
+            color: white;
+        }
+
+        .tag.blue { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+        .tag.red { background: linear-gradient(135deg, #ef4444, #dc2626); }
+        .tag.green { background: linear-gradient(135deg, #10b981, #059669); }
+        .tag.yellow { background: linear-gradient(135deg, #f59e0b, #d97706); }
+        .tag.purple { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+
+        .table-box {
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th {
+            background: linear-gradient(135deg, #1f2937, #374151);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        tr:hover {
+            background: #f9fafb;
+        }
+
+        .icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+        }
+
+        .do-dont-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        .do-box {
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #10b981;
+        }
+
+        .dont-box {
+            background: linear-gradient(135deg, #fee2e2, #fecaca);
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 5px solid #ef4444;
+        }
+
+        .do-box h4 { color: #065f46; }
+        .dont-box h4 { color: #991b1b; }
+
+        .score-bar {
+            background: linear-gradient(to right, #ef4444, #f59e0b, #10b981);
+            height: 35px;
+            border-radius: 20px;
+            position: relative;
+            margin: 30px 0;
+        }
+
+        .score-marker {
+            position: absolute;
+            top: -30px;
+            transform: translateX(-50%);
+            font-size: 0.85em;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            .content-grid { grid-template-columns: 1fr; }
+            .do-dont-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 COMPLETE AMAZON KEYWORD RESEARCH MASTER GUIDE</h1>
+        </header>
+
+        <!-- PART 1: KEYWORD RESEARCH -->
+        <div class="part-section">
+            <div class="part-header">
+                <h2>PART 1: KEYWORD RESEARCH</h2>
+            </div>
+            
+            <div class="content-grid">
+                <div class="card blue">
+                    <h3><span class="icon">🔍</span>Finding the Right Keywords</h3>
+                    
+                    <h4>Tools to Use:</h4>
+                    <ul>
+                        <li>Amazon itself (search bar, "Customers also bought", "Related searches")</li>
+                        <li>Helium 10, Jungle Scout, Viral Launch, Sellics, AMZScout</li>
+                        <li>Google Keyword Planner (for extra ideas)</li>
+                        <li>Competitor listings (see top sellers' keywords)</li>
+                    </ul>
+                </div>
+
+                <div class="card green">
+                    <h3><span class="icon">📊</span>Types of Keywords</h3>
+                    
+                    <h4>Short-tail Keywords:</h4>
+                    <p>1–2 words, high search volume, high competition</p>
+                    <div class="example-box">Example: "Pendant Light"</div>
+                    
+                    <h4>Long-tail Keywords:</h4>
+                    <p>3+ words, lower competition, higher conversion</p>
+                    <div class="example-box">Example: "E27 Adjustable Pendant Light for Kitchen"</div>
+                    
+                    <h4>Backend/Hidden Keywords:</h4>
+                    <p>Keywords customers search but not visible in listing</p>
+                </div>
+
+                <div class="card yellow">
+                    <h3><span class="icon">✅</span>Metrics to Check</h3>
+                    <ul>
+                        <li><strong>Search volume:</strong> How many people are searching</li>
+                        <li><strong>Relevance:</strong> Must relate to your product</li>
+                        <li><strong>Competition:</strong> Too high → hard to rank</li>
+                        <li><strong>Conversion potential:</strong> Long-tail often converts better</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- PART 2: KEYWORD PLACEMENT -->
+        <div class="part-section">
+            <div class="part-header">
+                <h2>PART 2: KEYWORD PLACEMENT (Where to Put Them)</h2>
+            </div>
+            
+            <div class="content-grid">
+                <div class="card red">
+                    <h3><span class="icon">📝</span>1. Title</h3>
+                    <ul>
+                        <li>Include main keyword + secondary keywords naturally</li>
+                        <li>Keep it readable, not keyword stuffed</li>
+                        <li>Max character limit: varies by category (usually 200)</li>
+                    </ul>
+                    <div class="example-box">
+                        Example: E27 Pendant Light – Adjustable Hanging Ceiling Lamp for Kitchen, Dining, Bar (Yellow Brass)
+                    </div>
+                </div>
+
+                <div class="card purple">
+                    <h3><span class="icon">🔹</span>2. Bullet Points</h3>
+                    <ul>
+                        <li>3–5 bullets</li>
+                        <li>Include high-converting keywords</li>
+                        <li>Focus on features & benefits</li>
+                    </ul>
+                    <div class="example-box">
+                        • "Adjustable E27 pendant lamp, perfect for kitchen and dining room"<br>
+                        • "Supports LED, Edison, and globe bulbs up to 60W"
+                    </div>
+                </div>
+
+                <div class="card teal">
+                    <h3><span class="icon">📄</span>3. Product Description / A+ Content</h3>
+                    <ul>
+                        <li>Include secondary keywords naturally</li>
+                        <li>Can use storytelling, benefits, and lifestyle use</li>
+                    </ul>
+                    <div class="example-box">
+                        "This retro-style E27 pendant light is ideal for lofts, cafes, and cozy homes…"
+                    </div>
+                </div>
+
+                <div class="card orange">
+                    <h3><span class="icon">🔒</span>4. Backend Search Terms (Hidden)</h3>
+                    <p>Accessed in Seller Central → Keywords tab</p>
+                    
+                    <div class="do-dont-grid">
+                        <div class="do-box">
+                            <h4>✅ INCLUDE:</h4>
+                            <ul>
+                                <li>Alternative names</li>
+                                <li>Misspellings</li>
+                                <li>Related searches</li>
+                            </ul>
+                        </div>
+                        <div class="dont-box">
+                            <h4>❌ AVOID:</h4>
+                            <ul>
+                                <li>Repeating title words</li>
+                                <li>Commas (Amazon ignores)</li>
+                                <li>Brand/competitor names</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card pink">
+                    <h3><span class="icon">🖼️</span>5. Images & Alt Text</h3>
+                    <ul>
+                        <li>Some tools pick up alt text</li>
+                        <li>Use main keywords in image file names</li>
+                    </ul>
+                    <div class="example-box">
+                        e27-pendant-light-yellow-brass.jpg
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PART 3: KEY TOOLS -->
+        <div class="part-section">
+            <div class="part-header">
+                <h2>PART 3: KEYWORD RESEARCH – KEY TOOLS</h2>
+            </div>
+            
+            <div class="content-grid">
+                <div class="card blue">
+                    <h3><span class="icon">🔧</span>MAGNET - Keyword Research</h3>
+                    <p>Helium 10's primary keyword research tool. Generates thousands of keyword ideas based on seed keyword.</p>
+                    
+                    <h4>What Magnet Does:</h4>
+                    <ul>
+                        <li>Generates related keyword suggestions</li>
+                        <li>Shows monthly search volume</li>
+                        <li>Displays Magnet IQ Score (opportunity rating)</li>
+                        <li>Shows competing products count</li>
+                        <li>Identifies trending keywords</li>
+                    </ul>
+                    
+                    <h4>Magnet IQ Score:</h4>
+                    <div class="score-bar">
+                        <div class="score-marker" style="left: 15%;">0-30<br>Avoid</div>
+                        <div class="score-marker" style="left: 40%;">31-50<br>Medium</div>
+                        <div class="score-marker" style="left: 60%;">51-70<br>Good!</div>
+                        <div class="score-marker" style="left: 85%;">71-100<br>Excellent!</div>
+                    </div>
+                    <p style="margin-top: 40px;"><strong>Formula:</strong> Search Volume + Low Competition</p>
+                </div>
+
+                <div class="card green">
+                    <h3><span class="icon">🎯</span>CEREBRO - Competitor Keyword Mining</h3>
+                    <p>Reverse ASIN lookup tool. Shows ALL keywords your competitors rank for.</p>
+                    
+                    <h4>What Cerebro Does:</h4>
+                    <ul>
+                        <li>Reveals competitor keywords (even hidden backend terms)</li>
+                        <li>Shows organic ranking position</li>
+                        <li>Displays search volume and competition</li>
+                        <li>Shows which keywords drive sales</li>
+                        <li>Identifies keyword gaps</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <strong>CPR (Cerebro Product Rank):</strong> How many sales needed in 8 days to rank on page 1<br>
+                        • CPR 0-50: Easy to rank (LOW competition)<br>
+                        • CPR 51-100: Medium difficulty<br>
+                        • CPR 100+: Hard to rank (HIGH competition)<br>
+                        <br>
+                        🔴 <strong>CRITICAL:</strong> For new product launches, target keywords with CPR under 50!
+                    </div>
+                </div>
+
+                <div class="card yellow">
+                    <h3><span class="icon">🧹</span>KEYWORD PROCESSOR - Clean & Organize</h3>
+                    <p>Also called Frankenstein. Cleans and organizes keyword lists.</p>
+                    
+                    <h4>What It Does:</h4>
+                    <ul>
+                        <li>Removes duplicate keywords</li>
+                        <li>Removes unwanted words/characters</li>
+                        <li>Sorts keywords alphabetically or by frequency</li>
+                        <li>Converts phrases to single words or keeps phrases intact</li>
+                        <li>Cleans data before sending to Scribbles</li>
+                    </ul>
+                </div>
+
+                <div class="card purple">
+                    <h3><span class="icon">✍️</span>SCRIBBLES - Listing Optimization</h3>
+                    <p>Helps write optimized Amazon listings by tracking keyword usage.</p>
+                    
+                    <h4>What Scribbles Does:</h4>
+                    <ul>
+                        <li>Shows which keywords are used in listing</li>
+                        <li>Highlights unused keywords (still need to add)</li>
+                        <li>Counts character limits for Title, Bullets, Description</li>
+                        <li>Color-codes keywords by search volume/importance</li>
+                        <li>Prevents keyword repetition waste</li>
+                    </ul>
+                    
+                    <h4>Color-Coding:</h4>
+                    <div class="tag-group">
+                        <span class="tag red">🔴 Highest volume (use in title!)</span>
+                        <span class="tag yellow">🟠 High volume (use in bullets)</span>
+                        <span class="tag green">🟢 Medium volume</span>
+                        <span class="tag blue">🔵 Lower volume (backend/description)</span>
+                    </div>
+                </div>
+
+                <div class="card teal">
+                    <h3><span class="icon">🔍</span>INDEX CHECKER - Verify Keywords</h3>
+                    <p>Verifies if Amazon has indexed your keywords (= your product shows up for that search).</p>
+                    
+                    <h4>Why Indexing Matters:</h4>
+                    <div class="highlight-box">
+                        If your keyword is NOT indexed, your product WON'T show up for that search!
+                    </div>
+                    
+                    <h4>How to Fix Non-Indexed Keywords:</h4>
+                    <ul>
+                        <li>If keyword in backend → Move to Title or Bullets</li>
+                        <li>If already in title/bullets → Check spelling, try variation</li>
+                        <li>Add keyword to A+ Content</li>
+                        <li>Wait 48 hours and re-check</li>
+                    </ul>
+                    
+                    <p><strong>🔴 CRITICAL:</strong> Check indexing WEEKLY!</p>
+                </div>
+
+                <div class="card orange">
+                    <h3><span class="icon">📊</span>XRAY - Product & Keyword Analysis</h3>
+                    <p>Quick market research and product analysis tool.</p>
+                    
+                    <h4>Xray Shows:</h4>
+                    <ul>
+                        <li>Est. Monthly Sales</li>
+                        <li>Monthly Revenue</li>
+                        <li>Avg Review ratings</li>
+                        <li>Top organic keywords</li>
+                        <li>Search volume and ranking position</li>
+                    </ul>
+                </div>
+
+                <div class="card pink">
+                    <h3><span class="icon">🌲</span>JUNGLE SCOUT</h3>
+                    <p>Mainly used for finding good products and analyzing demand + keywords.</p>
+                    
+                    <h4>Key Features:</h4>
+                    <ul>
+                        <li><strong>Keyword Scout:</strong> Find monthly searches & competition level</li>
+                        <li><strong>Sales Estimator:</strong> See how much competitors sell per month</li>
+                        <li><strong>Product Tracker:</strong> Track competitors' sales and price changes</li>
+                    </ul>
+                    
+                    <p><strong>✅ Best for:</strong> New product research before launching on Amazon</p>
+                </div>
+
+                <div class="card red">
+                    <h3><span class="icon">📈</span>AMAZON BRAND ANALYTICS</h3>
+                    <p>Free tool from Amazon (only for Brand Registered Sellers). Uses real customer data!</p>
+                    
+                    <h4>What You Can See:</h4>
+                    <ul>
+                        <li><strong>Top Search Terms:</strong> What customers actually type in Amazon</li>
+                        <li><strong>Click Share & Conversion Share:</strong> How many clicked vs bought</li>
+                        <li><strong>Competitor Analysis:</strong> Which competitors get more clicks</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <strong>Why It's Powerful:</strong> Uses real Amazon customer data, not estimates!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PART 4: KEYWORD PLACEMENT STRATEGIES -->
+        <div class="part-section">
+            <div class="part-header">
+                <h2>PART 4: KEYWORD PLACEMENT STRATEGIES</h2>
+            </div>
+            
+            <div class="content-grid">
+                <div class="card blue">
+                    <h3><span class="icon">📱</span>Title Optimization (Mobile vs PC)</h3>
+                    
+                    <div class="highlight-box">
+                        <strong>🔴 CRITICAL:</strong> 80% of shoppers use mobile! First 80 characters = MOST IMPORTANT
+                    </div>
+                    
+                    <h4>Title Formula:</h4>
+                    <div class="example-box">
+                        Brand + Product Type + Key Feature + Size/Color/Quantity
+                    </div>
+                    
+                    <h4>Character Breakdown:</h4>
+                    <p><strong>Characters 1-80 (MOBILE VISIBLE):</strong></p>
+                    <ul>
+                        <li>Brand name</li>
+                        <li>Main product keyword</li>
+                        <li>Top feature/benefit</li>
+                        <li>Key specification</li>
+                    </ul>
+                    
+                    <p><strong>Characters 81-200 (PC/DESKTOP):</strong></p>
+                    <ul>
+                        <li>Additional features</li>
+                        <li>Use case</li>
+                        <li>Size/color/specs</li>
+                        <li>Secondary keywords</li>
+                    </ul>
+                    
+                    <div class="do-dont-grid">
+                        <div class="do-box">
+                            <h4>✅ DO:</h4>
+                            <ul>
+                                <li>Capitalize First Letter Of Each Word</li>
+                                <li>Use numerals (1.2m)</li>
+                                <li>Include brand at start</li>
+                                <li>Front-load high volume keywords</li>
+                                <li>Use natural, readable language</li>
+                            </ul>
+                        </div>
+                        <div class="dont-box">
+                            <h4>❌ DON'T:</h4>
+                            <ul>
+                                <li>Use ALL CAPS (except E27, LED)</li>
+                                <li>Add "Best", "Sale", "#1", "Hot"</li>
+                                <li>Use special characters: !@#$%^&*</li>
+                                <li>Repeat keywords unnecessarily</li>
+                                <li>Exceed 200 characters</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card green">
+                    <h3><span class="icon">🔹</span>Bullet Points Strategy</h3>
+                    
+                    <h4>Character Limits:</h4>
+                    <ul>
+                        <li>Each Bullet: 500 characters max</li>
+                        <li>Recommended: 200-250 characters per bullet</li>
+                    </ul>
+                    
+                    <h4>Bullet Point Structure:</h4>
+                    <div class="example-box">
+                        [CAPITALIZED FEATURE] - [Benefit to customer] - [Supporting detail with keywords]
+                    </div>
+                    
+                    <h4>5-Bullet Keyword Strategy:</h4>
+                    <ul>
+                        <li><strong>Bullet 1:</strong> Primary Keywords + Main Benefit</li>
+                        <li><strong>Bullet 2:</strong> Secondary Keywords + Unique Feature</li>
+                        <li><strong>Bullet 3:</strong> Long-tail Keywords + Use Case</li>
+                        <li><strong>Bullet 4:</strong> Material/Quality Keywords + Specifications</li>
+                        <li><strong>Bullet 5:</strong> Remaining Keywords + Warranty/Guarantee</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <strong>🔴 CRITICAL:</strong> EVERY bullet includes multiple relevant keywords NATURALLY without stuffing!
+                    </div>
+                </div>
+
+                <div class="card yellow">
+                    <h3><span class="icon">🔒</span>Backend Search Terms (249 bytes)</h3>
+                    
+                    <p><strong>MAXIMUM: 249 BYTES (UPDATED 2026)</strong></p>
+                    <p>Hidden keywords in Seller Central that customers DON'T see but Amazon indexes for search.</p>
+                    
+                    <div class="do-dont-grid">
+                        <div class="dont-box">
+                            <h4>❌ NEVER Include:</h4>
+                            <ul>
+                                <li>Keywords already in Title or Bullets (wastes space!)</li>
+                                <li>Punctuation: commas, hyphens, periods, semicolons</li>
+                                <li>Brand names (yours or competitors)</li>
+                                <li>ASINs</li>
+                                <li>Temporary statements: "new", "on sale"</li>
+                                <li>Both singular AND plural forms</li>
+                                <li>Misspellings of common words</li>
+                            </ul>
+                        </div>
+                        <div class="do-box">
+                            <h4>✅ DO Include:</h4>
+                            <ul>
+                                <li>Synonyms: "lamp" if you used "light"</li>
+                                <li>Alternative product names</li>
+                                <li>Misspellings customers actually search</li>
+                                <li>Related use cases</li>
+                                <li>Material variations</li>
+                                <li>Abbreviations</li>
+                                <li>Different language terms</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h4>How to Format:</h4>
+                    <div class="example-box">
+                        ✅ CORRECT: hanging lamp ceiling fixture adjustable vintage retro farmhouse<br>
+                        ❌ WRONG: hanging lamp, ceiling fixture, adjustable, vintage
+                    </div>
+                    
+                    <div class="highlight-box">
+                        <strong>Format:</strong> keyword1 keyword2 keyword3 keyword4<br>
+                        Just use SPACES between keywords. NO commas, NO punctuation.<br>
+                        <br>
+                        <strong>🔴 CRITICAL:</strong> For German market: "Hängelampe" = 11 bytes (not 10!) because ä = 2 bytes
+                    </div>
+                </div>
+
+                <div class="card purple">
+                    <h3><span class="icon">📄</span>Description Keywords</h3>
+                    
+                    <h4>Character Limit:</h4>
+                    <ul>
+                        <li>Maximum: 2000 characters</li>
+                        <li>Recommended: 1500-1800 characters (better readability)</li>
+                    </ul>
+                    
+                    <h4>Description Purpose:</h4>
+                    <ul>
+                        <li>Adding ALL remaining keywords that didn't fit in title/bullets</li>
+                        <li>Telling your product story</li>
+                        <li>Including technical specifications</li>
+                        <li>Providing usage instructions</li>
+                        <li>Building trust and credibility</li>
+                    </ul>
+                    
+                    <h4>Description Keyword Strategy:</h4>
+                    <ul>
+                        <li><strong>Paragraph 1:</strong> Hook with Keywords (start with customer problem)</li>
+                        <li><strong>Paragraph 2-3:</strong> Features with Keywords</li>
+                        <li><strong>Paragraph 4:</strong> Specifications with Keywords</li>
+                    </ul>
+                </div>
+
+                <div class="card teal">
+                    <h3><span class="icon">➕</span>A+ Content Keywords</h3>
+                    
+                    <p><strong>⚠️ Only for Brand Registry Sellers</strong></p>
+                    
+                    <h4>Why A+ Content?</h4>
+                    <ul>
+                        <li>Boosts conversion by 5–10%</li>
+                        <li>Keywords allowed in image text</li>
+                        <li>Up to 7 keyword-rich modules</li>
+                        <li>Indexed by Amazon search (2026)</li>
+                        <li>Image ALT text now indexed by Rufus AI</li>
+                    </ul>
+                    
+                    <h4>A+ Keyword Placement:</h4>
+                    <ul>
+                        <li><strong>Module 1:</strong> Brand Story - Use brand & quality keywords</li>
+                        <li><strong>Module 2–4:</strong> Product Features - Feature keywords in images & captions</li>
+                        <li><strong>Module 5–6:</strong> Use Cases - Keyword-rich scenes</li>
+                    </ul>
+                </div>
+
+                <div class="card orange">
+                    <h3><span class="icon">🖼️</span>Image Keywords & Alt Text</h3>
+                    
+                    <h4>Image Requirements:</h4>
+                    <ul>
+                        <li>Main Image: Pure white background RGB(255,255,255)</li>
+                        <li>Product fills 85% of frame</li>
+                        <li>Minimum: 1000x1000 pixels (Recommended: 2000x2000)</li>
+                        <li>Use all 9 image slots</li>
+                    </ul>
+                    
+                    <h4>How Keywords Work in Images (2026 Update):</h4>
+                    <ul>
+                        <li><strong>Method 1:</strong> Image File Names (before upload)</li>
+                        <li><strong>Method 2:</strong> Image Alt Text (CRITICAL 2026!)</li>
+                        <li><strong>Method 3:</strong> Infographic Text Overlays</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <strong>Why Image Keywords Matter in 2026:</strong><br>
+                        • Rufus AI analyzes images visually AND reads alt text<br>
+                        • Google Image Search indexes alt text<br>
+                        • Accessibility for visually impaired customers<br>
+                        • Better understanding of product context
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PART 5: 2026 NEW UPDATES -->
+        <div class="part-section">
+            <div class="part-header">
+                <h2>PART 5: 2026 NEW UPDATES</h2>
+            </div>
+            
+            <div class="content-grid">
+                <div class="card red">
+                    <h3><span class="icon">🤖</span>Rufus AI Optimization</h3>
+                    
+                    <div class="highlight-box">
+                        <strong>MOST IMPORTANT 2026 CHANGE!</strong><br>
+                        Rufus is Amazon's generative AI shopping assistant. By 2026, over 250 million customers actively use Rufus to search and shop.
+                    </div>
+                    
+                    <h4>What Rufus Changes for Keywords:</h4>
+                    <ul>
+                        <li>Semantic Understanding > Exact Match keywords</li>
+                        <li>Natural Language > Keyword stuffing</li>
+                        <li>Question-based queries > Single keywords</li>
+                        <li>Context & Intent > Keyword density</li>
+                        <li>Conversational > Robotic listing copy</li>
+                    </ul>
+                    
+                    <h4>How to Optimize for Rufus AI:</h4>
+                    <p><strong>Strategy 1: Use Natural Language</strong></p>
+                    <p>Write like a human talking to another human, not a robot stuffing keywords.</p>
+                    
+                    <p><strong>Strategy 2: Answer Questions in Listing</strong></p>
+                    <p>Include 8-12 common customer questions naturally in bullets/description</p>
+                    
+                    <p><strong>Strategy 3: Complete ALL Product Attributes</strong></p>
+                    <p>Rufus heavily relies on structured data. Fill EVERY field in Seller Central.</p>
+                    
+                    <p><strong>Strategy 4: Add Descriptive Alt Text to ALL Images</strong></p>
+                    <p>Rufus "sees" images through alt text. Be descriptive!</p>
+                    
+                    <div class="highlight-box">
+                        <strong>🔴 CRITICAL:</strong> Test your listing with Rufus! Ask it 10 questions about your product and see if it answers correctly.
+                    </div>
+                </div>
+
+                <div class="card green">
+                    <h3><span class="icon">⚙️</span>Amazon A10+ Algorithm</h3>
+                    
+                    <p>Amazon's algorithm evolved from A9 → A10 → A10+ (current). Major ranking factor shifts:</p>
+                    
+                    <div class="table-box">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Ranking Factor</th>
+                                    <th>Old Weight</th>
+                                    <th>2026 Weight</th>
+                                    <th>What It Means</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Keyword Relevance</td>
+                                    <td>40%</td>
+                                    <td>25%</td>
+                                    <td>Still important but not #1</td>
+                                </tr>
+                                <tr>
+                                    <td>Conversion Rate</td>
+                                    <td>25%</td>
+                                    <td>35%</td>
+                                    <td>Most important factor now!</td>
+                                </tr>
+                                <tr>
+                                    <td>Sales Velocity</td>
+                                    <td>20%</td>
+                                    <td>20%</td>
+                                    <td>Unchanged</td>
+                                </tr>
+                                <tr>
+                                    <td>Review Quality</td>
+                                    <td>10%</td>
+                                    <td>15%</td>
+                                    <td>Recent reviews matter more</td>
+                                </tr>
+                                <tr>
+                                    <td>External Traffic</td>
+                                    <td>0%</td>
+                                    <td>5%</td>
+                                    <td>NEW: Social/email traffic counts</td>
+                                </tr>
+                                <tr>
+                                    <td>Return Rate</td>
+                                    <td>5%</td>
+                                    <td>10%</td>
+                                    <td>High returns = ranking penalty</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="highlight-box">
+                        <strong>CRITICAL:</strong> Conversion Rate > Keywords! A keyword with 15% CVR beats one with 5% CVR even if search volume is lower.
+                    </div>
+                </div>
+
+                <div class="card blue">
+                    <h3><span class="icon">❓</span>Question-based Keywords (Rising Trend)</h3>
+                    
+                    <p>With Rufus, voice search, and AI, customers now search with FULL QUESTIONS instead of just keywords.</p>
+                    
+                    <div class="table-box">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Old Keyword Style</th>
+                                    <th>New Question-Based Style</th>
+                                    <th>Search Volume Trend</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>"pendant light"</td>
+                                    <td>"what pendant light for kitchen island"</td>
+                                    <td>↑ 340%</td>
+                                </tr>
+                                <tr>
+                                    <td>"adjustable lamp"</td>
+                                    <td>"how to adjust pendant light height"</td>
+                                    <td>↑ 280%</td>
+                                </tr>
+                                <tr>
+                                    <td>"E27 bulb"</td>
+                                    <td>"what bulbs work with E27 pendant lights"</td>
+                                    <td>↑ 195%</td>
+                                </tr>
+                                <tr>
+                                    <td>"ceiling light installation"</td>
+                                    <td>"how do I install a pendant ceiling light"</td>
+                                    <td>↑ 420%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <h4>How to Optimize for Question-Based Keywords:</h4>
+                    <ul>
+                        <li>Use tools like AlsoAsked.com or AnswerThePublic</li>
+                        <li>Check "Customers also asked" on Amazon</li>
+                        <li>Answer questions naturally in Description</li>
+                        <li>Create FAQ section in A+ Content</li>
+                        <li>Use conversational bullet points</li>
+                    </ul>
+                </div>
+
+                <div class="card purple">
+                    <h3><span class="icon">🌐</span>External Traffic Impact on Rankings</h3>
+                    
+                    <p><strong>NEW 2026:</strong> Amazon now rewards products that bring traffic from OUTSIDE Amazon.</p>
+                    
+                    <h4>External Traffic Sources That Help Rankings:</h4>
+                    <ul>
+                        <li>Instagram/Facebook product posts → Amazon link</li>
+                        <li>YouTube product reviews → Amazon affiliate link</li>
+                        <li>Email campaigns to your customer list</li>
+                        <li>Blog posts with Amazon links</li>
+                        <li>TikTok product videos → Amazon link</li>
+                        <li>Pinterest pins → Amazon storefront</li>
+                    </ul>
+                    
+                    <h4>How to Track External Traffic:</h4>
+                    <p>Use Amazon Attribution (free tool in Seller Central):</p>
+                    <ul>
+                        <li>Create unique tracking links for each source</li>
+                        <li>See which external channels drive conversions</li>
+                        <li>Amazon rewards listings that convert external traffic</li>
+                    </ul>
+                    
+                    <div class="highlight-box">
+                        <strong>🔴 CRITICAL:</strong> External traffic with HIGH conversion rate = ranking boost!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK REFERENCE TABLES -->
+        <div class="part-section">
+            <div class="part-header">
+                <h2>📋 QUICK REFERENCE TABLES</h2>
+            </div>
+            
+            <div class="content-grid">
+                <div class="card yellow">
+                    <h3>Character Limits Summary</h3>
+                    <div class="table-box">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Section</th>
+                                    <th>Character Limit</th>
+                                    <th>Recommendation</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Title</td>
+                                    <td>200 characters</td>
+                                    <td>150-180 (mobile-friendly)</td>
+                                </tr>
+                                <tr>
+                                    <td>Bullet Point</td>
+                                    <td>500 max per bullet</td>
+                                    <td>200-250 per bullet</td>
+                                </tr>
+                                <tr>
+                                    <td>Description</td>
+                                    <td>2000 characters</td>
+                                    <td>1500-1800</td>
+                                </tr>
+                                <tr>
+                                    <td>Search Terms</td>
+                                    <td>250 bytes</td>
+                                    <td>249 bytes (use all!)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card teal">
+                    <h3>Mobile vs Desktop Visibility</h3>
+                    <div class="table-box">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>View Type</th>
+                                    <th>Characters Visible</th>
+                                    <th>Strategy</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Mobile View</td>
+                                    <td>First 80 characters</td>
+                                    <td>PUT MOST IMPORTANT KEYWORDS HERE!</td>
+                                </tr>
+                                <tr>
+                                    <td>PC/Desktop View</td>
+                                    <td>Full 200 characters</td>
+                                    <td>Add secondary keywords & details</td>
+                                </tr>
+                                <tr>
+                                    <td>Amazon Search Results</td>
+                                    <td>~150 characters</td>
+                                    <td>Front-load critical info</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
